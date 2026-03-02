@@ -1,0 +1,69 @@
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.summary-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.summary-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  letter-spacing: 0.2px;
+}
+
+.summary-count {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.summary-card.pending {
+  background: linear-gradient(to bottom right, #fff, #fff9f0);
+}
+
+.summary-card.progress {
+  background: linear-gradient(to bottom right, #fff, var(--accent-light));
+}
+
+.summary-card.completed {
+  background: linear-gradient(to bottom right, #fff, #f0fdf4);
+}
+
+.summary-card.pending .summary-count {
+  color: var(--pending);
+}
+.summary-card.progress .summary-count {
+  color: var(--accent);
+}
+.summary-card.completed .summary-count {
+  color: var(--completed);
+}
+
+@media (max-width: 768px) {
+  .summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .summary-card {
+    padding: 20px;
+  }
+}
